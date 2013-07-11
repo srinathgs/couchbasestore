@@ -5,7 +5,15 @@ Gorilla's Session store implementation with Couchbase backend.
 
 Gorilla's Sessions and their sessions store interface can be found [here](https://github.com/gorilla/sessions)
 
---------
+
+Installation
+----------
+
+Install this package as you would usually install any Go package.
+
+Run `go get github.com/srinathgs/couchbasestore` from terminal. It gets installed in $GOPATH
+
+
 Example
 --------
     
