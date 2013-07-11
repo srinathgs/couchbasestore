@@ -88,7 +88,7 @@ func (c *CouchStore) New(r *http.Request, name string)(*sessions.Session,error){
 }
 
 func (c *CouchStore) Save(r *http.Request, w http.ResponseWriter, session *sessions.Session) error {
-	// Build an alphanumeric key for the redis store.
+	// Build an alphanumeric key for the couchbase store.
 	if session.ID == "" {
 		session.ID = strings.TrimRight(base32.StdEncoding.EncodeToString(securecookie.GenerateRandomKey(32)), "=")
 	}
@@ -125,7 +125,7 @@ func (c *CouchStore) save(session *sessions.Session) error{
 	}
 	c.getBucket()
 	defer c.closeBucket()
-	errSet := c.Bucket.Set(session.ID,c.Options.MaxAge,encoded)
+	errSet := c.Bucket.Set(session.ID,session.Options.MaxAge,encoded)
 	if errSet != nil{
 		return errSet
 	}
