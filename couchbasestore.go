@@ -1,3 +1,4 @@
+//Package couchbasestore implements the gorilla sessions store interface to store session data in couchbase.
 //This Software is licensed under MIT license available under the LICENSE File
 package couchbasestore
 
@@ -79,7 +80,7 @@ func (c *CouchStore) Get(r *http.Request, name string) (*sessions.Session, error
 	return sessions.GetRegistry(r).Get(c, name)
 }
 
-//Create New Session. CouchStore.Get will perform this in case there is no existing session.
+//New creates a new session. CouchStore.Get will perform this in case there is no existing session.
 func (c *CouchStore) New(r *http.Request, name string) (*sessions.Session, error) {
 	session := sessions.NewSession(c, name)
 	//default values
