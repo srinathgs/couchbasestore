@@ -1,8 +1,9 @@
+//Copyright 2013 Srinath. All rights Reserved.
 //This Software is licensed under MIT license available in the LICENSE file.
 
 /*
 Package couchbasestore implements the Gorilla toolkit's sessions store for couchbase.
-Gorilla's Sessions and their sessions store interface can be found [here](https://github.com/gorilla/sessions)
+Gorilla's Sessions and their sessions store interface can be found
 Currently, this package supports storing sessions in only one bucket. In case your application demands to keep sessions in different buckets, implement a container that will have couchbasestore as the underlying struct.
       package main
       import (
