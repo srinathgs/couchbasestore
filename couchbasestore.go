@@ -11,6 +11,8 @@ import (
 	"strings"
 )
 
+//CouchStore Definition
+
 type CouchStore struct {
 	endpoint   string
 	bucket     *couchbase.Bucket
@@ -23,7 +25,7 @@ type CouchStore struct {
 //No. Of Retries. The program that uses this package can change this.
 var Retries = 5
 
-var MaxAgeError = errors.New("Max age should be greater than zero")
+var ErrMaxAge = errors.New("Max age should be greater than zero")
 
 //Create a new CouchStore.
 func NewCouchStore(endpoint string, pool string, bucket string, path string, maxAge int, keyPairs ...[]byte) (*CouchStore, error) {
@@ -39,7 +41,7 @@ func NewCouchStore(endpoint string, pool string, bucket string, path string, max
 		path = "/"
 	}
 	if maxAge <= 0 {
-		return nil, MaxAgeError
+		return nil, ErrMaxAge
 	}
 	return &CouchStore{
 		endpoint: endpoint,
