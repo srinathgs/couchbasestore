@@ -26,7 +26,7 @@ Example
         "github.com/gorilla/mux"
     )
     
-    var store = couchbasestore.NewCouchStore("http://[<username>]:[<password>]@<ip>:<port>","<poolname>",
+    var store, _ = couchbasestore.NewCouchStore("http://[<username>]:[<password>]@<ip>:<port>","<poolname>",
                                               "<bucketname>","/",3600,[]byte("secret-key"))
     func foobar(w http.ResponseWriter, r *http.Request){
       session,err := store.Get(r,"foo") //name is the key against which a cookie is set in the HTTP header
