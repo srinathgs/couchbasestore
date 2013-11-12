@@ -1,3 +1,5 @@
+//This Software is licensed under MIT license available in the LICENSE file.
+
 /*
 
 Gorilla's Session store implementation with Couchbase backend.
