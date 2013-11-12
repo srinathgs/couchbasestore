@@ -24,7 +24,8 @@ type CouchStore struct {
 //No. Of Retries. The program that uses this package can change this.
 var Retries = 5
 
-var ErrMaxAge = errors.New("Max age should be greater than zero")
+//MaxAge Error.
+var ErrMaxAge = errors.New("max age should be greater than zero")
 
 //NewCouchStore creates a new CouchStore.
 func NewCouchStore(endpoint string, pool string, bucket string, path string, maxAge int, keyPairs ...[]byte) (*CouchStore, error) {
