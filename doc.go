@@ -1,8 +1,7 @@
 //This Software is licensed under MIT license available in the LICENSE file.
 
 /*
-
-Gorilla's Session store implementation with Couchbase backend.
+Package couchbasestore implements the Gorilla toolkit's sessions store for couchbase.
 
 Gorilla's Sessions and their sessions store interface can be found here https://github.com/gorilla/sessions
 
