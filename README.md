@@ -5,6 +5,7 @@ Gorilla's Session store implementation with Couchbase backend.
 
 Gorilla's Sessions and their sessions store interface can be found [here](https://github.com/gorilla/sessions)
 
+Currently, this package supports storing sessions in only one bucket. In case your application demands to keep sessions in different buckets, implement a container that will have couchbasestore as the underlying struct.
 
 Installation
 ----------
@@ -28,7 +29,7 @@ Example
     var store = couchbasestore.NewCouchStore("http://[<username>]:[<password>]@<ip>:<port>","<poolname>",
                                               "<bucketname>","/",3600,[]byte("secret-key"))
     func foobar(w http.ResponseWriter, r *http.Request){
-      session,err := store.Get(r,"foo")
+      session,err := store.Get(r,"foo") //name is the key against which a cookie is set in the HTTP header
       defer session.Save(r,w)
       session.Values["bar"] = "baz"
       fmt.Fprintf(w,"<h1>You have successfully accessed sessions.</h1>")
