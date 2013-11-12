@@ -1,4 +1,5 @@
 /*
+
 Gorilla's Session store implementation with Couchbase backend.
 
 Gorilla's Sessions and their sessions store interface can be found [here](https://github.com/gorilla/sessions)
