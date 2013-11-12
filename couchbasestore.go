@@ -12,7 +12,6 @@ import (
 )
 
 //CouchStore Definition
-
 type CouchStore struct {
 	endpoint   string
 	bucket     *couchbase.Bucket
