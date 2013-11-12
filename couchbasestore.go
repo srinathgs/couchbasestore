@@ -1,3 +1,6 @@
+//Copyright 2013 Srinath. All rights Reserved.
+//This Software is licensed under MIT license available in the LICENSE file.
+
 package couchbasestore
 
 import (
