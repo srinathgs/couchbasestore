@@ -26,7 +26,7 @@ var Retries = 5
 
 var ErrMaxAge = errors.New("Max age should be greater than zero")
 
-//Create a new CouchStore.
+//NewCouchStore creates a new CouchStore.
 func NewCouchStore(endpoint string, pool string, bucket string, path string, maxAge int, keyPairs ...[]byte) (*CouchStore, error) {
 	c, err := couchbase.Connect(endpoint)
 	if err != nil {
