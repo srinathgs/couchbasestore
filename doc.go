@@ -2,13 +2,8 @@
 
 /*
 Package couchbasestore implements the Gorilla toolkit's sessions store for couchbase.
-
-Gorilla's Sessions and their sessions store interface can be found here https://github.com/gorilla/sessions
-
+Gorilla's Sessions and their sessions store interface can be found [here](https://github.com/gorilla/sessions)
 Currently, this package supports storing sessions in only one bucket. In case your application demands to keep sessions in different buckets, implement a container that will have couchbasestore as the underlying struct.
-
-
-
       package main
       import (
           "fmt"

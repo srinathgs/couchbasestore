@@ -1,5 +1,3 @@
-//Package couchbasestore implements the gorilla sessions store interface to store session data in couchbase.
-//This Software is licensed under MIT license available under the LICENSE File
 package couchbasestore
 
 import (
