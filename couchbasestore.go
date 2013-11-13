@@ -76,7 +76,7 @@ func (c *CouchStore) Close() {
 	c.closeBucket()
 }
 
-//Get Session data from CouchStore
+//Get Session data from CouchStore. name is the key in the cookie against which the cookie string is set.
 func (c *CouchStore) Get(r *http.Request, name string) (*sessions.Session, error) {
 	return sessions.GetRegistry(r).Get(c, name)
 }
