@@ -40,7 +40,7 @@ Example
     var store, _ = couchbasestore.NewCouchStoreBucket(bucket, "/", 3600, []byte("secret-key"))
 
     func foobar(w http.ResponseWriter, r *http.Request) {
-        session, err := store.Get(r, "foo") //name is the key against which a cookie is set in the HTTP header
+        session, _ := store.Get(r, "foo") //name is the key against which a cookie is set in the HTTP header
         defer session.Save(r, w)
         session.Values["bar"] = "baz"
         fmt.Fprintf(w, "<h1>You have successfully accessed sessions.</h1>")
