@@ -22,7 +22,7 @@ import (
 	"time"
 )
 
-// CouchStore implements gorilla/sessions Store interface
+// CouchStore implements the gorilla/sessions Store interface
 type CouchStore struct {
 	bucket  *couchbase.Bucket
 	codecs  []securecookie.Codec
