@@ -1,5 +1,5 @@
 // Package couchbasestore implements the Gorilla toolkit's sessions store for couchbase.
-// Gorilla's Sessions and their sessions store interface can be found [here](https://github.com/gorilla/sessions)
+// Gorilla's Sessions and their sessions store interface can be found at https://github.com/gorilla/sessions
 //
 // Couchbasestore is NOT thread-safe.
 //
