@@ -1,4 +1,4 @@
-[![GoDoc](https://godoc.org/github.com/srinathgs/couchbasestore?status.png)](http://godoc.org/github.com/srinathgs/couchbasestore)
+[![GoDoc](https://godoc.org/github.com/drathier/couchbasestore?status.png)](http://godoc.org/github.com/drathier/couchbasestore)
 couchbasestore
 ==============
 

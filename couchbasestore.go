@@ -6,6 +6,9 @@
 //
 // This package is backwards compatible with the original package by Srinath.
 // The original can be found at https://github.com/srinathgs/couchbasestore
+//
+// Package couchbasestore implements the Gorilla toolkit's sessions store for couchbase.
+// Gorilla's Sessions and their sessions store interface can be found [here](https://github.com/gorilla/sessions)
 package couchbasestore
 
 import (
