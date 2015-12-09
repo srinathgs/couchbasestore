@@ -1,14 +1,14 @@
-// Copyright 2013 Srinath. All rights Reserved.
-// Copyright 2015 drathier. All rights Reserved.
-// This Software is licensed under MIT license available in the LICENSE file.
+// Package couchbasestore implements the Gorilla toolkit's sessions store for couchbase.
+// Gorilla's Sessions and their sessions store interface can be found [here](https://github.com/gorilla/sessions)
 //
 // Couchbasestore is NOT thread-safe.
 //
 // This package is backwards compatible with the original package by Srinath.
 // The original can be found at https://github.com/srinathgs/couchbasestore
 //
-// Package couchbasestore implements the Gorilla toolkit's sessions store for couchbase.
-// Gorilla's Sessions and their sessions store interface can be found [here](https://github.com/gorilla/sessions)
+// Copyright 2013 Srinath. All rights Reserved.
+// Copyright 2015 drathier. All rights Reserved.
+// This Software is licensed under MIT license available in the LICENSE file.
 package couchbasestore
 
 import (
