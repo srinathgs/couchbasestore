@@ -22,7 +22,7 @@ import (
 	"time"
 )
 
-// CouchStore Definition
+// CouchStore implements gorilla/sessions Store interface
 type CouchStore struct {
 	bucket  *couchbase.Bucket
 	codecs  []securecookie.Codec
@@ -57,16 +57,16 @@ func New(bucket *couchbase.Bucket, cookiePath string, cookieMaxAge int, keyPairs
 	}, nil
 }
 
-// Backwards-compatible alias for New.
+// NewCouchStore is a backwards-compatible alias for New.
 func NewCouchStore(endpoint string, pool string, bucket string, cookiePath string, cookieMaxAge int, keyPairs ...[]byte) (*CouchStore, error) {
-	return NewFromURI(endpoint, pool, bucket, cookiePath, cookieMaxAge, keyPairs)
+	return NewFromURI(endpoint, pool, bucket, cookiePath, cookieMaxAge, keyPairs...)
 }
 
 // NewFromURI creates a new CouchStore with a new couchbase.Bucket.
-func NewFromURI(endpoint string, pool string, bucket string, cookiePath string, cookieMaxAge int, keyPairs ...[]byte) (*CouchStore, error) {
-	bucket, err := couchbase.GetBucket(endpoint, pool, bucket)
+func NewFromURI(endpoint string, pool string, bucketName string, cookiePath string, cookieMaxAge int, keyPairs ...[]byte) (*CouchStore, error) {
+	bucket, err := couchbase.GetBucket(endpoint, pool, bucketName)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	return New(bucket, cookiePath, cookieMaxAge, keyPairs...)
@@ -132,7 +132,7 @@ func maybeRetry(f func() error) error {
 		err = f()
 		if err == couchbase.TimeoutError || err == couchbase.ErrTimeout {
 			failedAttempts++
-			time.Sleep((failedAttempts + 1) * BaseRetryDuration) // exponential backoff
+			time.Sleep(time.Duration(failedAttempts + 1) * BaseRetryDuration) // exponential backoff
 		} else {
 			return err // unknown or no error
 		}
